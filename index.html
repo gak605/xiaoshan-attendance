@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1f2937" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="小山舍點名" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <title>小山舍點名</title>
+  <style>
+    :root{--bg:#f6f3ed;--card:#fffaf2;--text:#24211d;--muted:#7a7369;--line:#ddd4c7;--main:#1f2937;--accent:#446b59;--warn:#b8860b;--blue:#326b9c;--red:#ad4747;--green:#3f7658;}
+    *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;background:var(--bg);color:var(--text);padding-bottom:92px} 
+    header{position:sticky;top:0;z-index:3;background:rgba(246,243,237,.92);backdrop-filter:blur(14px);padding:calc(env(safe-area-inset-top) + 14px) 18px 12px;border-bottom:1px solid var(--line)}
+    h1{font-size:24px;margin:0 0 4px;letter-spacing:.02em}.sub{color:var(--muted);font-size:13px}.wrap{padding:16px;max-width:850px;margin:0 auto}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px;margin:0 0 14px;box-shadow:0 4px 18px rgba(60,45,20,.06)}
+    h2{font-size:18px;margin:0 0 12px} h3{font-size:15px;margin:0 0 8px;color:var(--muted)} label{display:block;font-size:13px;color:var(--muted);margin:10px 0 6px} input,select,textarea,button{font:inherit} input,select,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--text)} textarea{min-height:70px;resize:vertical}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}.btn{border:0;border-radius:14px;padding:12px 14px;background:var(--main);color:white;font-weight:700}.btn.secondary{background:#e7dfd4;color:var(--text)}.btn.danger{background:var(--red)}.btn.ghost{background:transparent;color:var(--main);border:1px solid var(--line)}.row{display:flex;gap:10px;align-items:center}.row>button{white-space:nowrap}.muted{color:var(--muted)}.small{font-size:12px}.pill{display:inline-flex;align-items:center;border-radius:999px;padding:5px 9px;background:#ece4d8;font-size:12px;color:#5b5146;margin:2px}.student{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;border-top:1px solid var(--line);padding:12px 0}.student:first-child{border-top:0}.name{font-weight:800;font-size:17px}.money{font-weight:900}.statusBtn{min-width:76px;border:0;border-radius:999px;padding:9px 10px;color:white;font-weight:800}.present{background:var(--green)}.leave{background:var(--warn)}.makeup{background:var(--blue)}.absent{background:var(--red)}.unset{background:#b7afa5;color:#2a251f}.tabs{position:fixed;left:0;right:0;bottom:0;z-index:5;background:rgba(255,250,242,.94);backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:8px 8px calc(env(safe-area-inset-bottom) + 8px);display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.tab{border:0;background:transparent;border-radius:14px;padding:9px 3px;color:var(--muted);font-size:12px}.tab.active{background:#e5dacd;color:var(--text);font-weight:800}.hide{display:none}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px}.toolbar .btn{padding:10px 12px}.empty{padding:20px;text-align:center;color:var(--muted)}.calc{font-size:14px;line-height:1.7}.calc strong{font-size:18px}.divider{height:1px;background:var(--line);margin:12px 0}.right{text-align:right}.notice{background:#efe7da;border:1px solid var(--line);border-radius:14px;padding:10px;color:#615447;font-size:13px}.dangerText{color:var(--red)}
+  </style>
+</head>
+<body>
+<header><h1>小山舍點名</h1><div class="sub" id="todayText"></div></header>
+<main class="wrap">
+  <section id="view-home">
+    <div class="card"><h2>今天上課</h2><div class="grid"><div><label>點名日期</label><input type="date" id="attDate"></div><div><label>篩選星期</label><select id="dayFilter"><option value="auto">依日期自動</option><option>星期一</option><option>星期二</option><option>星期三</option><option>星期四</option><option>星期五</option><option>星期六</option><option>星期日</option><option value="all">全部學生</option></select></div></div></div>
+    <div id="todayList"></div>
+  </section>
+
+  <section id="view-students" class="hide">
+    <div class="card"><h2>新增 / 編輯學生</h2><input type="hidden" id="editId"><label>學生姓名</label><input id="stuName" placeholder="例如：小宇"><div class="grid"><div><label>單堂費用</label><input id="stuFee" type="number" inputmode="numeric" placeholder="300"></div><div><label>狀態</label><select id="stuActive"><option value="active">上課中</option><option value="paused">停課</option></select></div></div><div class="grid"><div><label>上課星期</label><select id="stuDay"><option>星期一</option><option>星期二</option><option>星期三</option><option>星期四</option><option>星期五</option><option>星期六</option><option>星期日</option></select></div><div><label>上課時段</label><input id="stuTime" placeholder="16:30－18:30"></div></div><label>備註</label><textarea id="stuNote" placeholder="可留空，例如：補課提醒、特殊狀況"></textarea><div class="toolbar"><button class="btn" onclick="saveStudent()">儲存學生</button><button class="btn secondary" onclick="clearForm()">清空</button></div></div>
+    <div class="card"><h2>學生名單</h2><input id="studentSearch" placeholder="搜尋學生" oninput="renderStudents()"><div id="studentList"></div></div>
+  </section>
+
+  <section id="view-billing" class="hide">
+    <div class="card"><h2>下一期收費設定</h2><div class="grid"><div><label>下一期名稱</label><input id="termName" placeholder="例如：七、八月"></div><div><label>下一期堂數</label><input id="termLessons" type="number" inputmode="numeric" value="8"></div></div><div class="notice">應繳金額＝單堂費用 × 下一期堂數 − 單堂費用 × 上期請假堂數</div></div>
+    <div id="billingList"></div>
+  </section>
+
+  <section id="view-data" class="hide">
+    <div class="card"><h2>統計</h2><div id="stats"></div></div>
+    <div class="card"><h2>備份與匯出</h2><div class="toolbar"><button class="btn" onclick="exportCSV()">匯出 CSV</button><button class="btn secondary" onclick="exportJSON()">匯出備份 JSON</button><button class="btn secondary" onclick="importClick()">匯入 JSON</button><input type="file" id="importFile" accept="application/json" class="hide" onchange="importJSON(event)"></div><div class="divider"></div><button class="btn danger" onclick="resetAll()">清除全部資料</button></div>
+  </section>
+</main>
+<nav class="tabs"><button class="tab active" onclick="show('home',this)">🏠<br>首頁</button><button class="tab" onclick="show('students',this)">👦<br>學生</button><button class="tab" onclick="show('billing',this)">💰<br>收費</button><button class="tab" onclick="show('data',this)">📊<br>資料</button></nav>
+<script>
+const KEY='xiaoshan-attendance-v1';
+let db=load();
+const days=['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+function load(){return JSON.parse(localStorage.getItem(KEY)||'{"students":[],"attendance":{},"billing":{}}')}
+function save(){localStorage.setItem(KEY,JSON.stringify(db)); renderAll()}
+function todayISO(){const d=new Date(); d.setMinutes(d.getMinutes()-d.getTimezoneOffset()); return d.toISOString().slice(0,10)}
+function dayName(iso){return days[new Date(iso+'T00:00:00').getDay()]}
+function money(n){return Number(n||0).toLocaleString('zh-TW')}
+function init(){attDate.value=todayISO(); todayText.textContent=new Date().toLocaleDateString('zh-TW',{month:'long',day:'numeric',weekday:'long'}); attDate.onchange=renderHome; dayFilter.onchange=renderHome; termName.value=db.billing.termName||''; termLessons.value=db.billing.termLessons||8; termName.oninput=()=>{db.billing.termName=termName.value; localStorage.setItem(KEY,JSON.stringify(db)); renderBilling()}; termLessons.oninput=()=>{db.billing.termLessons=Number(termLessons.value||0); localStorage.setItem(KEY,JSON.stringify(db)); renderBilling()}; renderAll(); if('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js').catch(()=>{});}
+function show(view,btn){document.querySelectorAll('main section').forEach(s=>s.classList.add('hide')); document.getElementById('view-'+view).classList.remove('hide'); document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); btn.classList.add('active'); renderAll()}
+function renderAll(){renderHome();renderStudents();renderBilling();renderStats()}
+function saveStudent(){const id=editId.value||crypto.randomUUID(); const s={id,name:stuName.value.trim(),fee:Number(stuFee.value||0),day:stuDay.value,time:stuTime.value.trim(),note:stuNote.value.trim(),active:stuActive.value}; if(!s.name)return alert('請輸入學生姓名'); const i=db.students.findIndex(x=>x.id===id); if(i>=0)db.students[i]=s; else db.students.push(s); clearForm(); save()}
+function clearForm(){editId.value=''; stuName.value=''; stuFee.value=''; stuDay.value='星期二'; stuTime.value=''; stuNote.value=''; stuActive.value='active'}
+function editStudent(id){const s=db.students.find(x=>x.id===id); if(!s)return; editId.value=s.id; stuName.value=s.name; stuFee.value=s.fee; stuDay.value=s.day; stuTime.value=s.time; stuNote.value=s.note||''; stuActive.value=s.active||'active'; window.scrollTo({top:0,behavior:'smooth'});}
+function deleteStudent(id){if(confirm('確定刪除這位學生？')){db.students=db.students.filter(s=>s.id!==id); save()}}
+function studentSort(a,b){return (a.day+a.time+a.name).localeCompare(b.day+b.time+b.name,'zh-Hant')}
+function renderStudents(){const q=(studentSearch?.value||'').trim(); const list=db.students.filter(s=>!q||s.name.includes(q)).sort(studentSort); studentList.innerHTML=list.length?list.map(s=>`<div class="student"><div><div class="name">${s.name}</div><div class="muted small">${s.day}｜${s.time||'未填時段'}｜單堂 ${money(s.fee)} 元</div><div>${s.active==='paused'?'<span class="pill">停課</span>':'<span class="pill">上課中</span>'}${s.note?`<span class="pill">${s.note}</span>`:''}</div></div><div class="right"><button class="btn ghost" onclick="editStudent('${s.id}')">編輯</button><br><button class="btn ghost dangerText" onclick="deleteStudent('${s.id}')">刪除</button></div></div>`).join(''):'<div class="empty">尚未新增學生</div>'}
+const statusMap={present:['出席','present'],leave:['請假','leave'],makeup:['補課','makeup'],absent:['缺席','absent'],unset:['未點','unset']}; const nextStatus={unset:'present',present:'leave',leave:'makeup',makeup:'absent',absent:'unset'};
+function getStatus(date,id){return (db.attendance[date]||{})[id]||'unset'}
+function cycleStatus(date,id){db.attendance[date]=db.attendance[date]||{}; const n=nextStatus[getStatus(date,id)]; if(n==='unset')delete db.attendance[date][id]; else db.attendance[date][id]=n; save()}
+function renderHome(){const date=attDate.value||todayISO(); const f=dayFilter.value==='auto'?dayName(date):dayFilter.value; const list=db.students.filter(s=>s.active!=='paused'&&(f==='all'||s.day===f)).sort(studentSort); const grouped={}; list.forEach(s=>{const k=s.time||'未填時段'; (grouped[k]=grouped[k]||[]).push(s)}); todayList.innerHTML=list.length?Object.entries(grouped).map(([time,arr])=>`<div class="card"><h2>${time}</h2>${arr.map(s=>{const st=getStatus(date,s.id);return `<div class="student"><div><div class="name">${s.name}</div><div class="muted small">${s.day}｜單堂 ${money(s.fee)} 元</div></div><button class="statusBtn ${statusMap[st][1]}" onclick="cycleStatus('${date}','${s.id}')">${statusMap[st][0]}</button></div>`}).join('')}</div>`).join(''):`<div class="card empty">${f} 沒有學生</div>`}
+function leaveKey(id){return 'leave_'+id} function paidKey(id){return 'paid_'+id}
+function setLeave(id,val){db.billing[leaveKey(id)]=Number(val||0); localStorage.setItem(KEY,JSON.stringify(db)); renderBilling()}
+function setPaid(id,val){db.billing[paidKey(id)]=val; localStorage.setItem(KEY,JSON.stringify(db)); renderBilling(); renderStats()}
+function renderBilling(){const lessons=Number(termLessons.value||db.billing.termLessons||0); const list=db.students.filter(s=>s.active!=='paused').sort(studentSort); billingList.innerHTML=list.length?list.map(s=>{const leave=Number(db.billing[leaveKey(s.id)]||0); const due=Math.max(0,s.fee*lessons-s.fee*leave); const paid=!!db.billing[paidKey(s.id)]; return `<div class="card"><div class="row" style="justify-content:space-between"><div><div class="name">${s.name}</div><div class="muted small">${s.day}｜${s.time||'未填時段'}｜單堂 ${money(s.fee)} 元</div></div><div class="right"><div class="money">${money(due)} 元</div><label class="small"><input type="checkbox" ${paid?'checked':''} onchange="setPaid('${s.id}',this.checked)" style="width:auto"> 已收</label></div></div><div class="grid"><div><label>上期請假堂數</label><input type="number" inputmode="numeric" value="${leave}" onchange="setLeave('${s.id}',this.value)"></div><div><label>下一期堂數</label><input value="${lessons}" disabled></div></div><div class="calc muted">${money(s.fee)} × ${lessons} 堂 ＝ ${money(s.fee*lessons)}<br>扣抵：${money(s.fee)} × ${leave} 堂 ＝ ${money(s.fee*leave)}<br><strong>應收：${money(due)} 元</strong></div></div>`}).join(''):'<div class="card empty">尚未新增學生</div>'}
+function renderStats(){const lessons=Number(termLessons.value||db.billing.termLessons||0); let total=0,unpaid=0,paidCount=0; db.students.filter(s=>s.active!=='paused').forEach(s=>{const due=Math.max(0,s.fee*lessons-s.fee*Number(db.billing[leaveKey(s.id)]||0)); total+=due; if(db.billing[paidKey(s.id)])paidCount++; else unpaid+=due;}); let counts={present:0,leave:0,makeup:0,absent:0}; Object.values(db.attendance).forEach(day=>Object.values(day).forEach(st=>counts[st]=(counts[st]||0)+1)); stats.innerHTML=`<div class="grid"><div class="card"><h3>應收總額</h3><div class="money">${money(total)} 元</div></div><div class="card"><h3>未收金額</h3><div class="money">${money(unpaid)} 元</div></div></div><div class="grid"><div class="card"><h3>已收人數</h3><div class="money">${paidCount}</div></div><div class="card"><h3>學生數</h3><div class="money">${db.students.length}</div></div></div><div class="card"><span class="pill">出席 ${counts.present}</span><span class="pill">請假 ${counts.leave}</span><span class="pill">補課 ${counts.makeup}</span><span class="pill">缺席 ${counts.absent}</span></div>`}
+function download(name,text,type='text/plain'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click();URL.revokeObjectURL(a.href)}
+function exportCSV(){let rows=[['學生','星期','時段','單堂費用','上期請假堂數','下一期堂數','應收','已收']]; const lessons=Number(termLessons.value||0); db.students.forEach(s=>{const leave=Number(db.billing[leaveKey(s.id)]||0); rows.push([s.name,s.day,s.time,s.fee,leave,lessons,Math.max(0,s.fee*lessons-s.fee*leave),db.billing[paidKey(s.id)]?'是':'否'])}); download('小山舍點名收費.csv','\ufeff'+rows.map(r=>r.map(v=>`"${String(v??'').replaceAll('"','""')}"`).join(',')).join('\n'),'text/csv')}
+function exportJSON(){download('小山舍點名備份.json',JSON.stringify(db,null,2),'application/json')}
+function importClick(){importFile.click()} function importJSON(e){const file=e.target.files[0]; if(!file)return; const r=new FileReader(); r.onload=()=>{try{db=JSON.parse(r.result); save()}catch{alert('匯入失敗，檔案格式不正確')}}; r.readAsText(file)}
+function resetAll(){if(confirm('確定清除全部資料？請先匯出備份。')){localStorage.removeItem(KEY); db=load(); renderAll()}}
+init();
+</script>
+</body>
+</html>
