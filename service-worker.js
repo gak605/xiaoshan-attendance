@@ -1,5 +1,5 @@
-const CACHE_NAME = 'xiaoshan-v032-20260704';
-const ASSETS = ['./?v=032','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const CACHE_NAME = 'xiaoshan-v033-20260704';
+const ASSETS = ['./?v=033','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 
 self.addEventListener('install', event => {
   self.skipWaiting();
