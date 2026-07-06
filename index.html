@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>小山舍與孩子 v0.5.2</title>
-<link rel="manifest" href="manifest.webmanifest?v=075">
-<link rel="apple-touch-icon" href="icon-192.png?v=075">
+<link rel="manifest" href="manifest.webmanifest?v=076">
+<link rel="apple-touch-icon" href="icon-192.png?v=076">
 <style>
 :root{--bg:#f7f1e7;--card:#fffaf2;--ink:#1f292d;--muted:#81796f;--line:#ddd2c4;--chip:#eee6dc;--blue:#2f80ed;--green:#126c42;--red:#a83232}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",Arial,sans-serif;padding:env(safe-area-inset-top) 0 calc(92px + env(safe-area-inset-bottom))}button,input,select,textarea{font:inherit}button{border:0}.app{max-width:900px;margin:auto;padding:24px 18px}.version{font-weight:900;color:var(--muted);font-size:16px}.cloud{display:inline-block;background:#fff1c9;color:#946200;padding:5px 10px;border-radius:999px;margin-left:8px;font-size:13px}h1{font-size:42px;line-height:1.04;margin:10px 0 2px;font-weight:1000;letter-spacing:-1.5px}.subtitle{font-size:20px;color:var(--muted);font-weight:800;margin-bottom:28px}.card{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:22px;margin-bottom:18px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.space{justify-content:space-between}label{display:block;font-weight:900;color:var(--muted);margin:14px 0 8px}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:16px;background:#fffdf8;padding:15px 16px;color:var(--ink)}textarea{min-height:90px}.primary{background:var(--ink);color:#fff;border-radius:16px;padding:15px 22px;font-weight:1000}.secondary{background:var(--chip);color:var(--ink);border-radius:16px;padding:14px 18px;font-weight:1000}.ghost{background:transparent;border:1px solid var(--line);border-radius:16px;padding:12px 16px;font-weight:900;color:var(--ink)}.danger{color:var(--red)}.dangerBtn{background:#fff1f1;color:var(--red);border:1px solid #e5b8b8;border-radius:16px;padding:14px 18px;font-weight:1000}.miniDanger{background:#fff1f1;color:var(--red);border:1px solid #e5b8b8;border-radius:999px;padding:8px 12px;font-weight:1000;white-space:nowrap}.fileInput{background:#fffdf8;border:1px dashed var(--line);border-radius:16px;padding:16px}.adjustBox{background:#fffdf8;border:1px solid var(--line);border-radius:18px;padding:14px;margin-top:12px}.calcLine{display:flex;justify-content:space-between;gap:12px;font-weight:900;margin:5px 0}.minus{color:var(--green)}.tabbar{position:fixed;bottom:0;left:0;right:0;background:rgba(255,250,242,.95);backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:8px 10px calc(8px + env(safe-area-inset-bottom));z-index:100}.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;max-width:900px;margin:auto}.tab{padding:8px 6px;border-radius:18px;text-align:center;font-weight:1000;color:var(--muted);background:transparent}.tab.active{background:var(--chip);color:var(--ink)}.emoji{display:block;font-size:24px}.page{display:none}.page.active{display:block}.dateBox{display:grid;grid-template-columns:64px 1fr 64px;align-items:center;text-align:center}.circle{width:64px;height:64px;border-radius:50%;background:var(--chip);color:var(--blue);font-size:36px;font-weight:900}.dateMain{font-size:34px;font-weight:1000}.dateSub{font-size:17px;color:var(--muted);font-weight:800}.stat{background:var(--chip);border-radius:20px;text-align:center;padding:16px 6px}.stat b{font-size:30px}.stat span{display:block;color:var(--muted);font-weight:900}.item{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.item:last-child{border-bottom:0}.name{font-size:20px;font-weight:1000}.meta{color:var(--muted);font-weight:800;font-size:14px;margin-top:3px}.badge{border-radius:999px;padding:8px 12px;font-weight:1000;white-space:nowrap;background:var(--chip)}.present{background:#dff3e8;color:#157347}.leave{background:#fff1c9;color:#946200}.makeup{background:#d9ecff;color:#1f6ecb}.paused{background:#eee;color:#777}.stopped{background:#f6dddd;color:#8f1d1d}.notice{background:#fff5d8;border:1px solid #ead7a2;color:#705100;border-radius:18px;padding:14px 16px;font-weight:900}.checkgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.checkitem{background:#fffdf8;border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-weight:900}.checkitem input{width:auto;margin-right:8px}.editBox{border-top:1px solid var(--line);margin-top:16px;padding-top:16px}.labelPreview{background:#fff;color:#111;border:1px dashed #777;width:320px;aspect-ratio:80/56;padding:16px;margin:0 auto 12px}.brand{text-align:center;font-weight:1000}.line{border-top:1px solid #222;margin:5px 0}.feeRow{display:flex;justify-content:space-between;font-weight:900;line-height:1.55}.small{font-size:11px;color:#111}.total{text-align:center;font-size:20px;font-weight:1000}.printSheet{display:none}
@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="app">
-<div class="version">v0.7.5 Makeup Credit Fix<span id="cloudStatus" class="cloud">連線中</span></div>
+<div class="version">v0.7.6 Safe Makeup Credit<span id="cloudStatus" class="cloud">連線中</span></div>
 <h1>小山舍與孩子</h1><div class="subtitle">雲端同步・學生編輯・點名・學費・貼紙</div>
 <section id="home" class="page active">
 <div class="card dateBox"><button class="circle" data-action="prev">‹</button><div><div id="dateMain" class="dateMain"></div><div id="dateSub" class="dateSub"></div></div><button class="circle" data-action="next">›</button></div>
@@ -38,7 +38,7 @@
 <div class="card"><h2>資料備份</h2><div class="notice">JSON 可完整還原；CSV 適合用 Excel 檢查學生資料。</div><div class="row" style="margin-top:14px"><button class="primary" data-action="exportJSON">匯出 JSON 完整備份</button><button class="secondary" data-action="exportCSV">匯出 CSV 學生表</button></div><div id="backupInfo" class="meta" style="margin-top:12px"></div></div>
 <div class="card"><h2>還原資料</h2><div class="notice">請只匯入本系統匯出的 JSON 備份。匯入會覆蓋目前雲端資料。</div><input class="fileInput" id="importFile" type="file" accept=".json,application/json"><button class="primary" style="margin-top:12px" data-action="importJSON">匯入 JSON 並還原</button></div>
 <div class="card"><h2>危險操作</h2><div class="notice">清除雲端資料會刪除所有學生、點名、學費與共同收費資料。此功能已加入雙重確認。</div><button class="dangerBtn" data-action="dangerClear">清除雲端資料</button></div>
-<div class="card"><h2>系統資訊</h2><div class="meta">版本：v0.7.5 Makeup Credit Fix<br>資料庫：Firebase Firestore<br>網站：Vercel</div></div>
+<div class="card"><h2>系統資訊</h2><div class="meta">版本：v0.7.6 Safe Makeup Credit<br>資料庫：Firebase Firestore<br>網站：Vercel</div></div>
 </section>
 </div>
 <nav class="tabbar"><div class="tabs"><button class="tab active" data-page="home"><span class="emoji">🏠</span>首頁</button><button class="tab" data-page="students"><span class="emoji">🧑‍🎨</span>學生</button><button class="tab" data-page="fees"><span class="emoji">💰</span>學費</button><button class="tab" data-page="labels"><span class="emoji">🏷️</span>貼紙</button><button class="tab" data-page="settings"><span class="emoji">⚙️</span>設定</button></div></nav><div id="printSheet" class="printSheet"></div>
@@ -100,17 +100,27 @@ function leaveCountBeforeTerm(s){
 function makeupCreditCount(s){
   let count=0;
   Object.entries(state.makeups||{}).forEach(([d,ids])=>{
-    if(Array.isArray(ids)&&ids.includes(s.id)&&state.attendance[d+"_"+s.id]==="present")count++;
+    if(Array.isArray(ids) && ids.includes(s.id) && state.attendance[d+"_"+s.id]==="present"){
+      count++;
+    }
   });
   return count;
 }
-function autoPrevLeaveCount(s){
-  return Math.max(0,leaveCountBeforeTerm(s)-makeupCreditCount(s));
-}
+function autoPrevLeaveCount(s){return Math.max(0,leaveCountBeforeTerm(s)-makeupCreditCount(s))}
 function totalPrevLeave(s){return autoPrevLeaveCount(s)+Number(s.prevLeave||0)}
 function prevLeaveDeduct(s){return totalPrevLeave(s)*Number(s.fee||0)}
 function calc(s){return Math.max(0,baseFee(s)-prevLeaveDeduct(s)-getAdjustment(s.id))}
-function studentFeeLines(s){const lessons=lessonsForStudent(s),fee=Number(s.fee||0),manual=Number(s.prevLeave||0),leaveRaw=leaveCountBeforeTerm(s),makeup=makeupCreditCount(s),auto=autoPrevLeaveCount(s),prev=auto+manual,adj=getAdjustment(s.id);return{lessons,fee,base:lessons*fee,leaveRaw,makeup,auto,manual,prev,deduct:prev*fee,adj,total:calc(s)}}}
+function studentFeeLines(s){
+  const lessons=lessonsForStudent(s);
+  const fee=Number(s.fee||0);
+  const manual=Number(s.prevLeave||0);
+  const leaveRaw=leaveCountBeforeTerm(s);
+  const makeup=makeupCreditCount(s);
+  const auto=autoPrevLeaveCount(s);
+  const prev=auto+manual;
+  const adj=getAdjustment(s.id);
+  return{lessons,fee,base:lessons*fee,leaveRaw,makeup,auto,manual,prev,deduct:prev*fee,adj,total:calc(s)};
+}}
 function renderFees(){$("termName").value=state.settings.termName;$("termStart").value=state.settings.termStart;$("termEnd").value=state.settings.termEnd;const e=Object.values(groups());$("feeGroups").innerHTML=e.length?e.map(arr=>{const total=arr.reduce((a,s)=>a+calc(s),0),prev=arr.reduce((a,s)=>a+totalPrevLeave(s),0),lessons=arr.reduce((a,s)=>a+lessonsForStudent(s),0);const detail=arr.map(s=>{const f=studentFeeLines(s);return`<div class="adjustBox"><div class="calcLine"><span>${safe(s.name)}｜本期 ${f.lessons} 堂 × ${money(f.fee)}</span><span>${money(f.base)}</span></div><div class="calcLine minus"><span>待扣抵 ${f.prev} 堂（請假${f.leaveRaw}－已補${f.makeup}＋手動${f.manual}）</span><span>−${money(f.deduct)}</span></div>${f.adj?`<div class="calcLine minus"><span>手動扣抵</span><span>−${money(f.adj)}</span></div>`:""}<div class="calcLine"><span>應收</span><span>${money(f.total)}</span></div></div>`}).join("");return`<div class="item"><div><div class="name">${arr.length>1?"共同收費":"單獨收費"}｜${arr.map(s=>safe(s.name)).join("、")}</div><div class="meta">待扣抵 ${prev} 堂｜本期堂數 ${lessons} 堂｜合計 ${money(total)}</div>${detail}</div><div class="badge">${money(total)}</div></div>`}).join(""):'<div class="meta" style="text-align:center;padding:32px 0;font-size:20px">尚無可收費學生</div>'}
 function labelHTML(arr,cls="labelPreview"){const total=arr.reduce((a,s)=>a+calc(s),0),prev=arr.reduce((a,s)=>a+totalPrevLeave(s),0),lessons=arr.reduce((a,s)=>a+lessonsForStudent(s),0),base=arr.reduce((a,s)=>a+baseFee(s),0),deduct=arr.reduce((a,s)=>a+prevLeaveDeduct(s)+getAdjustment(s.id),0);return`<div class="${cls}"><div class="brand">小山舍與孩子</div><div class="small" style="text-align:center">${safe(state.settings.termName)}</div><div class="line"></div>${arr.map(s=>{const f=studentFeeLines(s);return`<div class="feeRow"><span>${safe(s.name)}</span><span>${money(f.total)}</span></div><div class="small">本期${f.lessons}堂 ${money(f.base)}｜待扣抵${f.prev}堂扣${money(f.deduct)}｜請假${f.leaveRaw}堂／已補${f.makeup}堂</div>`}).join("")}<div class="line"></div><div class="small">本期堂數：${lessons}堂　待扣抵：${prev}堂</div><div class="small">原額：${money(base)}　扣抵：${money(deduct)}</div><div class="line"></div><div class="total">應收：${money(total)}</div><div class="small">收費日期：________　老師：________</div></div>`}
 function renderLabels(){const e=Object.values(groups());$("labelPreviewWrap").innerHTML=e.length?e.map(a=>labelHTML(a)).join(""):'<div class="meta" style="text-align:center;padding:32px 0;font-size:20px">尚無可列印學生</div>'}
@@ -118,15 +128,31 @@ function printLabels(){$("printSheet").innerHTML=Object.values(groups()).map(a=>
 
 function downloadFile(name,text,type){const blob=new Blob([text],{type});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href)}
 async function createCloudBackup(reason="manual"){try{await addDoc(backupCol,{createdAt:serverTimestamp(),createdAtText:new Date().toISOString(),reason,data:JSON.parse(JSON.stringify(state))})}catch(e){console.warn("backup failed",e)}}
-async function exportJSON(){const now=new Date().toISOString().slice(0,19).replace(/[:T]/g,"-");state.meta=state.meta||{};state.meta.lastBackupAt=new Date().toISOString();await createCloudBackup("manual-json-export");await setDoc(dataRef,{...state,updatedAt:new Date().toISOString()});downloadFile(`xiaoshan-backup-${now}.json`,JSON.stringify({app:"xiaoshan-attendance",version:"0.7.5",exportedAt:new Date().toISOString(),data:state},null,2),"application/json");alert("JSON 備份已下載。")}
+async function exportJSON(){const now=new Date().toISOString().slice(0,19).replace(/[:T]/g,"-");state.meta=state.meta||{};state.meta.lastBackupAt=new Date().toISOString();await createCloudBackup("manual-json-export");await setDoc(dataRef,{...state,updatedAt:new Date().toISOString()});downloadFile(`xiaoshan-backup-${now}.json`,JSON.stringify({app:"xiaoshan-attendance",version:"0.7.6",exportedAt:new Date().toISOString(),data:state},null,2),"application/json");alert("JSON 備份已下載。")}
 function csvCell(v){return `"${String(v??"").replace(/"/g,'""')}"`}
 function exportCSV(){const rows=[["學生ID","姓名","老師","上課日","時段","單堂費用","狀態","共同收費ID","舊版手動追加前期請假","備註"]];state.students.forEach(s=>rows.push([s.id,s.name,s.teacher,studentDays(s).map(d=>"星期"+zhDay(d)).join("、"),s.time,s.fee,statusLabel(s),s.cbId,s.prevLeave,s.note]));const csv="\ufeff"+rows.map(r=>r.map(csvCell).join(",")).join("\n");const now=new Date().toISOString().slice(0,10);downloadFile(`xiaoshan-students-${now}.csv`,csv,"text/csv;charset=utf-8")}
 function importJSON(){const file=$("importFile").files?.[0];if(!file){alert("請先選擇 JSON 檔");return}const reader=new FileReader();reader.onload=async()=>{try{const parsed=JSON.parse(reader.result);const data=parsed.data||parsed;if(!data.students||!Array.isArray(data.students))throw new Error("格式不正確");if(!confirm(`即將匯入 ${data.students.length} 位學生並覆蓋目前雲端資料，確定嗎？`))return;await createCloudBackup("before-import");state={...defaults(),...data};normalize();await setDoc(dataRef,{...state,updatedAt:new Date().toISOString()});alert("匯入完成。")}catch(e){alert("匯入失敗：不是有效的小山舍 JSON 備份。")}};reader.readAsText(file)}
 async function dangerClear(){const count=state.students.length;if(!confirm(`⚠️ 即將清除雲端資料：${count} 位學生、所有點名、學費與貼紙資料。\n\n請先確認你已匯出 JSON 備份。\n\n要繼續嗎？`))return;const text=prompt('最後確認：請輸入 DELETE 才會清除。');if(text!=="DELETE"){alert("未輸入 DELETE，已取消。");return}await createCloudBackup("before-danger-clear");state=defaults();await setDoc(dataRef,{...state,updatedAt:new Date().toISOString()});alert("雲端資料已清除。")}
 function renderSettings(){const last=state.meta&&state.meta.lastBackupAt?new Date(state.meta.lastBackupAt).toLocaleString("zh-TW"):"尚未手動備份";if($("backupInfo"))$("backupInfo").textContent="最近一次手動 JSON 備份："+last}
 function renderAll(){renderHome();renderStudents();renderFees();renderLabels();renderSettings()}
-if("serviceWorker"in navigator){navigator.serviceWorker.register("./service-worker.js?v=075").catch(()=>{})}
+if("serviceWorker"in navigator){navigator.serviceWorker.register("./service-worker.js?v=076").catch(()=>{})}
 renderAll();
 </script>
+
+<script>
+window.addEventListener("error",function(e){
+  console.warn("xiaoshan fallback active",e.message);
+  document.querySelectorAll(".tab").forEach(function(btn){
+    btn.onclick=function(){
+      document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active")});
+      var page=document.getElementById(btn.dataset.page);
+      if(page) page.classList.add("active");
+      document.querySelectorAll(".tab").forEach(function(t){t.classList.remove("active")});
+      btn.classList.add("active");
+    };
+  });
+});
+</script>
+
 </body>
 </html>
